@@ -55,4 +55,4 @@ def getResponse(request):
 def chatbot_iframe(request):
     return render(request, 'blog/chat_iframe.html')
 
-#jjjjjj
+#jjj
