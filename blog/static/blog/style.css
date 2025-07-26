@@ -1,60 +1,61 @@
+.chat-container {
+    max-width: 600px;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    background: #fff;
+}
 
-#chatbot{
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    margin-top: 50px;
-    border-radius: 10px;
-    border: 1px solid gray;
+.chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background: #f0f0f0;
+}
+
+.message {
+    margin: 10px;
+    padding: 10px 14px;
+    border-radius: 18px;
+    max-width: 80%;
+    word-break: break-word;
+}
+
+.message.user {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.message.bot {
+    background-color: #e5e5ea;
+    align-self: flex-start;
+}
+
+.input-area {
+    display: flex;
     padding: 10px;
+    border-top: 1px solid #ccc;
+    background: white;
 }
 
-.botText{
-    font-family: monospace;
-    font-size: 14px;
-    text-align: left;
-    line-height: 25px;
-    color: rgb(109,111,109);
+.input-area input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
 }
 
-
-#userInput{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-    width: 70%;
-    text-align: center;
-}
-
-#textInput{
-    border: 3px solid white;
-    border-bottom: 3px solid #afafaf;
-    font-family: monospace;
-    font-size: 14px;
-    width: 60%;
-    padding: 16px;
-    color: rgb(213,67,41);
-}
-
-#buttonInput{
-    padding: 5px;
-    font-family: monospace;
-    font-size: 14px;
-    border: 3px solid #5b605c;
-    background-color: rgb(40,48,40);
+.input-area button {
+    background-color: #2196f3;
     color: white;
-    border-radius:10px;
-}
-
-h1{
-    text-align: center;
-    color: rgb(57,72,57);
-}
-
-.userText{
-    text-align: right;
-    font-family: monospace;
-    font-size: 14px;
-    line-height: 25px;
-    color: rgb(109,111,109);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
 }
