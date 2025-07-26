@@ -47,7 +47,7 @@ def index(request):
 def specific(request):
     return HttpResponse("list1")
 
-def getResponse(request):
+#def getResponse(request):
     userMessage = request.GET.get('userMessage')
     chatReponse = str(bot.get_response(userMessage))
     return HttpResponse(chatReponse)
@@ -55,4 +55,31 @@ def getResponse(request):
 def chatbot_iframe(request):
     return render(request, 'blog/chat_iframe.html')
 
-#jjjjjj
+#openai
+import openai
+from django.http import HttpResponse
+import os
+
+# APIキー設定（安全に環境変数から読み込むことを推奨）
+openai.api_key = ""
+from openai import OpenAI
+
+client = OpenAI(api_key=openai.api_key)
+
+def getResponse(request):
+    user_message = request.GET.get('userMessage', '')
+    
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "あなたは親切な飲食店サポートチャットボットです。"},
+                {"role": "user", "content": user_message}
+            ]
+        )
+        reply = response.choices[0].message.content.strip()
+        return HttpResponse(reply)
+
+    except Exception as e:
+        return HttpResponse(f"エラーが発生しました: {e}")
+
