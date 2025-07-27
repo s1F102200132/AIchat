@@ -9,4 +9,6 @@ urlpatterns = [
     path('getResponse',views.getResponse,name='getResponse'),
     
     path('chatbot/', views.chatbot_iframe, name='chatbot_iframe'),  # 追加
-]
+    
+    path('history/', views.history, name='history')
+] 
