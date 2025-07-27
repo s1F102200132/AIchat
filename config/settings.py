@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-72nxs=lt99az0dgx5_#k183+rne&=j#ergqe=*0qba77x#dofh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+AALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'aichat-bdx7.onrender.com',  # ← ここを追加
+]
+
 
 
 # Application definition
