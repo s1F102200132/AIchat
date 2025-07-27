@@ -28,7 +28,7 @@ DEBUG = True
 AALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'aichat-bdx7.onrender.com',  # ← ここを追加
+    'aichat-bdx7.onrender.com'# ← ここを追加
 ]
 
 
