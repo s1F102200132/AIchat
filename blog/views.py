@@ -57,13 +57,20 @@ def chatbot_iframe(request):
     return render(request, 'blog/chat_iframe.html')
 
 #openai
-import openai
 from django.http import HttpResponse
-import os
-
-# APIキー設定（安全に環境変数から読み込むことを推奨）
-openai.api_key = ""
 from openai import OpenAI
+import os
+import openai
+
+# 環境変数からAPIキーを読み込む
+# Renderに設定したキー名（例: OPENAI_API_KEY）と合わせる
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+if openai.api_key is None:
+    raise ValueError("OPENAI_API_KEY 環境変数が設定されていません。")
+
+# ... ChatGPT APIを呼び出すコード
+
 from .models import ChatLog # 追加
 
 client = OpenAI(api_key=openai.api_key)
